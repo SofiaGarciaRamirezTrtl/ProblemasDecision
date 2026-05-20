@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>3.3 — Regalo de San Valentín</title>
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+<div class="bg-canvas"><div class="bg-bubble"></div><div class="bg-bubble"></div><div class="bg-bubble"></div><div class="bg-bubble"></div></div>
+<nav class="navbar">
+  <a class="nav-logo" href="../index.html"><span>λ</span> AlgoProblemas</a>
+  <div class="nav-links"><a href="../index.html">← Inicio</a><span class="nav-badge">Problema 3.3</span></div>
+</nav>
+<div class="page-wrap"><div class="problem-page">
+  <div class="problem-header">
+    <div class="back-row"><a class="btn-back" href="../index.html"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg> Volver al inicio</a></div>
+    <div class="problem-badge">💝 Problema 3.3</div>
+    <h1 class="problem-title">Regalo de San Valentín</h1>
+    <p class="problem-subtitle">Determina el regalo ideal según tu presupuesto: Tarjeta, Chocolates, Flores o Anillo.</p>
+  </div>
+
+  <div class="glass-card">
+    <div class="glass-card-title"><span class="icon-tag">📝</span> Ingresar Datos</div>
+    <div class="form-grid">
+      <div class="form-group">
+        <label class="form-label">Presupuesto disponible ($)</label>
+        <input class="form-input" type="number" id="presupuesto" placeholder="Ej: 350.00" min="0" step="0.01"/>
+      </div>
+    </div>
+    <div style="margin-top:16px;padding:16px;background:rgba(160,210,255,0.10);border-radius:12px;border:1px solid rgba(160,210,255,0.25);">
+      <p style="font-family:'Nunito',sans-serif;font-weight:700;font-size:0.8rem;color:var(--ocean-6);margin-bottom:10px;">Tabla de regalos</p>
+      <table style="width:100%;font-size:0.85rem;border-collapse:collapse;">
+        <tr><th style="text-align:left;padding:4px 8px;color:var(--text-mid);">Presupuesto</th><th style="text-align:left;padding:4px 8px;color:var(--text-mid);">Regalo</th></tr>
+        <tr><td style="padding:4px 8px;color:var(--text-soft);">Menos de $100</td><td style="padding:4px 8px;">💌 Tarjeta</td></tr>
+        <tr><td style="padding:4px 8px;color:var(--text-soft);">$100 – $299</td><td style="padding:4px 8px;">🍫 Chocolates</td></tr>
+        <tr><td style="padding:4px 8px;color:var(--text-soft);">$300 – $699</td><td style="padding:4px 8px;">🌹 Flores</td></tr>
+        <tr><td style="padding:4px 8px;color:var(--text-soft);">$700 o más</td><td style="padding:4px 8px;">💍 Anillo</td></tr>
+      </table>
+    </div>
+    <div class="form-actions" style="margin-top:20px;">
+      <button class="btn-reset" onclick="resetForm()">Limpiar</button>
+      <button class="btn-calc" onclick="calcular()">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+        Elegir Regalo
+      </button>
+    </div>
+    <div class="result-box" id="result">
+      <div class="result-label">Regalo Recomendado</div>
+      <div class="result-value"></div>
+      <div class="result-detail"></div>
+    </div>
+  </div>
+
+  <div class="tab-section">
+    <div class="tabs">
+      <button class="tab-btn active" data-tab="tab-flow">Diagrama de Flujo</button>
+      <button class="tab-btn" data-tab="tab-pseudo">Pseudocódigo</button>
+      <button class="tab-btn" data-tab="tab-ns">Diagrama N/S</button>
+    </div>
+    <div class="tab-panel active" id="tab-flow">
+      <div class="glass-card">
+        <div class="glass-card-title"><span class="icon-tag">📊</span> Diagrama de Flujo</div>
+        <div class="flowchart-wrap">
+          <svg viewBox="0 0 380 620" xmlns="http://www.w3.org/2000/svg" style="max-height:620px;">
+            <defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#4fa0ec"/></marker></defs>
+            <ellipse cx="190" cy="34" rx="55" ry="22" fill="#4fa0ec" opacity=".85"/>
+            <text x="190" y="39" text-anchor="middle" fill="white" font-family="Nunito" font-weight="700" font-size="13">INICIO</text>
+            <line x1="190" y1="56" x2="190" y2="85" stroke="#4fa0ec" stroke-width="2" marker-end="url(#arr)"/>
+            <polygon points="90,85 290,85 270,118 110,118" fill="#a8d0f7" opacity=".7"/>
+            <text x="190" y="106" text-anchor="middle" fill="#1a2e42" font-family="DM Sans" font-size="12">Leer presupuesto</text>
+            <line x1="190" y1="118" x2="190" y2="150" stroke="#4fa0ec" stroke-width="2" marker-end="url(#arr)"/>
+            <!-- Decision 1 -->
+            <polygon points="190,150 310,200 190,250 70,200" fill="#7ab8f2" opacity=".65"/>
+            <text x="190" y="196" text-anchor="middle" fill="#1a2e42" font-family="Nunito" font-weight="700" font-size="11">pres &lt; 100?</text>
+            <line x1="190" y1="250" x2="190" y2="285" stroke="#4fa0ec" stroke-width="2" marker-end="url(#arr)"/>
+            <text x="198" y="272" fill="#3a5570" font-family="DM Sans" font-size="11">No</text>
+            <line x1="70" y1="200" x2="30" y2="200" stroke="#4fa0ec" stroke-width="2"/>
+            <line x1="30" y1="200" x2="30" y2="286" stroke="#4fa0ec" stroke-width="2"/>
+            <rect x="5" y="286" width="90" height="34" rx="8" fill="#ffd6e8" opacity=".8"/>
+            <text x="50" y="307" text-anchor="middle" fill="#1a2e42" font-family="DM Sans" font-size="11">💌 Tarjeta</text>
+            <text x="80" y="193" fill="#3a5570" font-family="DM Sans" font-size="11">Sí</text>
+            <!-- Decision 2 -->
+            <polygon points="190,285 310,335 190,385 70,335" fill="#7ab8f2" opacity=".55"/>
+            <text x="190" y="331" text-anchor="middle" fill="#1a2e42" font-family="Nunito" font-weight="700" font-size="11">pres &lt; 300?</text>
+            <line x1="70" y1="335" x2="30" y2="335" stroke="#4fa0ec" stroke-width="2"/>
+            <line x1="30" y1="335" x2="30" y2="420" stroke="#4fa0ec" stroke-width="2"/>
+            <rect x="5" y="420" width="90" height="34" rx="8" fill="#ffe8b5" opacity=".8"/>
+            <text x="50" y="441" text-anchor="middle" fill="#1a2e42" font-family="DM Sans" font-size="11">🍫 Chocolates</text>
+            <text x="80" y="328" fill="#3a5570" font-family="DM Sans" font-size="11">Sí</text>
+            <line x1="190" y1="385" x2="190" y2="420" stroke="#4fa0ec" stroke-width="2" marker-end="url(#arr)"/>
+            <text x="198" y="407" fill="#3a5570" font-family="DM Sans" font-size="11">No</text>
+            <!-- Decision 3 -->
+            <polygon points="190,420 310,468 190,516 70,468" fill="#7ab8f2" opacity=".45"/>
+            <text x="190" y="464" text-anchor="middle" fill="#1a2e42" font-family="Nunito" font-weight="700" font-size="11">pres &lt; 700?</text>
+            <line x1="70" y1="468" x2="30" y2="468" stroke="#4fa0ec" stroke-width="2"/>
+            <line x1="30" y1="468" x2="30" y2="552" stroke="#4fa0ec" stroke-width="2"/>
+            <rect x="5" y="552" width="90" height="34" rx="8" fill="#b5e3a1" opacity=".75"/>
+            <text x="50" y="573" text-anchor="middle" fill="#1a2e42" font-family="DM Sans" font-size="11">🌹 Flores</text>
+            <text x="80" y="461" fill="#3a5570" font-family="DM Sans" font-size="11">Sí</text>
+            <!-- Else: Anillo -->
+            <line x1="190" y1="516" x2="190" y2="552" stroke="#4fa0ec" stroke-width="2" marker-end="url(#arr)"/>
+            <rect x="130" y="552" width="120" height="34" rx="8" fill="#d4e8ff" opacity=".85"/>
+            <text x="190" y="573" text-anchor="middle" fill="#1a2e42" font-family="DM Sans" font-size="11">💍 Anillo</text>
+            <text x="198" y="538" fill="#3a5570" font-family="DM Sans" font-size="11">No</text>
+            <!-- FIN line -->
+            <line x1="190" y1="586" x2="190" y2="610" stroke="#4fa0ec" stroke-width="2" marker-end="url(#arr)"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div class="tab-panel" id="tab-pseudo">
+      <div class="glass-card">
+        <div class="glass-card-title"><span class="icon-tag">💻</span> Pseudocódigo</div>
+        <div class="code-block">
+          <div class="code-block-header"><div class="code-dot"></div><div class="code-dot"></div><div class="code-dot"></div><span class="code-block-label">Pseudocódigo — 3.3</span></div>
+          <pre><span class="kw">INICIO</span>
+
+  <span class="kw">LEER</span> presupuesto
+
+  <span class="kw">SI</span> presupuesto < 100 <span class="kw">ENTONCES</span>
+    <span class="fn">ESCRIBIR</span> <span class="st">"Regalo: 💌 Tarjeta"</span>
+  <span class="kw">SINO SI</span> presupuesto < 300 <span class="kw">ENTONCES</span>
+    <span class="fn">ESCRIBIR</span> <span class="st">"Regalo: 🍫 Chocolates"</span>
+  <span class="kw">SINO SI</span> presupuesto < 700 <span class="kw">ENTONCES</span>
+    <span class="fn">ESCRIBIR</span> <span class="st">"Regalo: 🌹 Flores"</span>
+  <span class="kw">SINO</span>
+    <span class="fn">ESCRIBIR</span> <span class="st">"Regalo: 💍 Anillo"</span>
+  <span class="kw">FIN SI</span>
+
+<span class="kw">FIN</span></pre>
+        </div>
+      </div>
+    </div>
+    <div class="tab-panel" id="tab-ns">
+      <div class="glass-card">
+        <div class="glass-card-title"><span class="icon-tag">🗂️</span> Diagrama N/S</div>
+        <table class="ns-table">
+          <tr><th colspan="2">Leer: presupuesto</th></tr>
+          <tr><td class="ns-cond" colspan="2">presupuesto &lt; 100</td></tr>
+          <tr>
+            <td class="ns-true"><strong>SÍ</strong><br/>💌 Tarjeta</td>
+            <td class="ns-false"><strong>NO</strong>
+              <table class="ns-table" style="margin-top:6px;">
+                <tr><td class="ns-cond" colspan="2">presupuesto &lt; 300</td></tr>
+                <tr>
+                  <td class="ns-true"><strong>SÍ</strong><br/>🍫 Chocolates</td>
+                  <td class="ns-false"><strong>NO</strong>
+                    <table class="ns-table" style="margin-top:6px;">
+                      <tr><td class="ns-cond" colspan="2">presupuesto &lt; 700</td></tr>
+                      <tr>
+                        <td class="ns-true"><strong>SÍ</strong><br/>🌹 Flores</td>
+                        <td class="ns-false"><strong>NO</strong><br/>💍 Anillo</td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div></div>
+<script src="../js/utils.js"></script>
+<script>
+function calcular() {
+  const p = parseFloat(document.getElementById('presupuesto').value);
+  if (isNaN(p)||p<0){alert('Ingresa un presupuesto válido');return;}
+  let regalo, detalle;
+  if (p < 100)      { regalo='💌 Tarjeta';    detalle='Presupuesto menor a $100. Una tarjeta es el regalo perfecto.'; }
+  else if (p < 300) { regalo='🍫 Chocolates'; detalle='Presupuesto entre $100 y $299. ¡Unos chocolates deliciosos!'; }
+  else if (p < 700) { regalo='🌹 Flores';     detalle='Presupuesto entre $300 y $699. Un hermoso ramo de flores.'; }
+  else              { regalo='💍 Anillo';     detalle='Presupuesto de $700 o más. ¡Un anillo es el regalo ideal!'; }
+  showResult(regalo, detalle);
+}
+function resetForm(){document.getElementById('presupuesto').value='';hideResult();}
+</script>
+</body></html>

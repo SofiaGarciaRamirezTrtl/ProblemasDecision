@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>3.10 — Destino de Vacaciones</title>
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+<div class="bg-canvas"><div class="bg-bubble"></div><div class="bg-bubble"></div><div class="bg-bubble"></div><div class="bg-bubble"></div></div>
+<nav class="navbar">
+  <a class="nav-logo" href="../index.html"><span>λ</span> AlgoProblemas</a>
+  <div class="nav-links"><a href="../index.html">← Inicio</a><span class="nav-badge">Problema 3.10</span></div>
+</nav>
+<div class="page-wrap"><div class="problem-page">
+  <div class="problem-header">
+    <div class="back-row"><a class="btn-back" href="../index.html"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg> Volver al inicio</a></div>
+    <div class="problem-badge">✈️ Problema 3.10</div>
+    <h1 class="problem-title">Destino de Vacaciones</h1>
+    <p class="problem-subtitle">Elige el destino ideal según tu presupuesto y la distancia que deseas recorrer.</p>
+  </div>
+
+  <div class="glass-card">
+    <div class="glass-card-title"><span class="icon-tag">📝</span> Ingresar Datos</div>
+    <div style="margin-bottom:16px;padding:14px;background:rgba(160,210,255,0.10);border-radius:12px;border:1px solid rgba(160,210,255,0.25);">
+      <p style="font-family:'Nunito',sans-serif;font-weight:700;font-size:0.8rem;color:var(--ocean-6);margin-bottom:8px;">Destinos disponibles</p>
+      <p style="font-size:0.83rem;color:var(--text-soft);line-height:1.8;">
+        Presup. alto (&gt;$5,000) + distancia larga (&gt;500 km): <strong>✈️ Internacional</strong><br/>
+        Presup. alto (&gt;$5,000) + distancia corta: <strong>🏖️ Playa nacional</strong><br/>
+        Presup. bajo + distancia larga: <strong>🏕️ Aventura económica</strong><br/>
+        Presup. bajo + distancia corta: <strong>🏠 Destino local</strong>
+      </p>
+    </div>
+    <div class="form-grid form-grid-2">
+      <div class="form-group">
+        <label class="form-label">Presupuesto ($)</label>
+        <input class="form-input" type="number" id="presupuesto" placeholder="Ej: 6000" min="0" step="0.01"/>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Distancia deseada (km)</label>
+        <input class="form-input" type="number" id="distancia" placeholder="Ej: 800" min="0"/>
+      </div>
+    </div>
+    <div class="form-actions" style="margin-top:20px;">
+      <button class="btn-reset" onclick="resetForm()">Limpiar</button>
+      <button class="btn-calc" onclick="calcular()">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+        Elegir Destino
+      </button>
+    </div>
+    <div class="result-box" id="result">
+      <div class="result-label">Destino Recomendado</div>
+      <div class="result-value"></div>
+      <div class="result-detail"></div>
+    </div>
+  </div>
+
+  <div class="tab-section">
+    <div class="tabs">
+      <button class="tab-btn active" data-tab="tab-pseudo">Pseudocódigo</button>
+      <button class="tab-btn" data-tab="tab-ns">Diagrama N/S</button>
+    </div>
+    <div class="tab-panel active" id="tab-pseudo">
+      <div class="glass-card">
+        <div class="glass-card-title"><span class="icon-tag">💻</span> Pseudocódigo</div>
+        <div class="code-block">
+          <div class="code-block-header"><div class="code-dot"></div><div class="code-dot"></div><div class="code-dot"></div><span class="code-block-label">Pseudocódigo — 3.10</span></div>
+          <pre><span class="kw">INICIO</span>
+
+  <span class="kw">LEER</span> presupuesto, distancia
+
+  <span class="kw">SI</span> presupuesto > 5000 <span class="kw">ENTONCES</span>
+    <span class="kw">SI</span> distancia > 500 <span class="kw">ENTONCES</span>
+      destino ← <span class="st">"✈️ Viaje Internacional"</span>
+    <span class="kw">SINO</span>
+      destino ← <span class="st">"🏖️ Playa Nacional"</span>
+    <span class="kw">FIN SI</span>
+  <span class="kw">SINO</span>
+    <span class="kw">SI</span> distancia > 500 <span class="kw">ENTONCES</span>
+      destino ← <span class="st">"🏕️ Aventura Económica"</span>
+    <span class="kw">SINO</span>
+      destino ← <span class="st">"🏠 Destino Local"</span>
+    <span class="kw">FIN SI</span>
+  <span class="kw">FIN SI</span>
+
+  <span class="fn">ESCRIBIR</span> <span class="st">"Destino ideal: "</span> + destino
+
+<span class="kw">FIN</span></pre>
+        </div>
+      </div>
+    </div>
+    <div class="tab-panel" id="tab-ns">
+      <div class="glass-card">
+        <div class="glass-card-title"><span class="icon-tag">🗂️</span> Diagrama N/S</div>
+        <table class="ns-table">
+          <tr><th colspan="2">Leer: presupuesto, distancia</th></tr>
+          <tr><td class="ns-cond" colspan="2">presupuesto &gt; 5,000</td></tr>
+          <tr>
+            <td class="ns-true"><strong>SÍ (alto)</strong>
+              <table class="ns-table" style="margin-top:4px;">
+                <tr><td class="ns-cond" colspan="2">distancia &gt; 500 km</td></tr>
+                <tr>
+                  <td class="ns-true"><strong>SÍ</strong><br/>✈️ Internacional</td>
+                  <td class="ns-false"><strong>NO</strong><br/>🏖️ Playa Nacional</td>
+                </tr>
+              </table>
+            </td>
+            <td class="ns-false"><strong>NO (bajo)</strong>
+              <table class="ns-table" style="margin-top:4px;">
+                <tr><td class="ns-cond" colspan="2">distancia &gt; 500 km</td></tr>
+                <tr>
+                  <td class="ns-true"><strong>SÍ</strong><br/>🏕️ Aventura Económica</td>
+                  <td class="ns-false"><strong>NO</strong><br/>🏠 Destino Local</td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr><th colspan="2">Escribir: destino</th></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div></div>
+<script src="../js/utils.js"></script>
+<script>
+function calcular(){
+  const p=parseFloat(document.getElementById('presupuesto').value);
+  const d=parseFloat(document.getElementById('distancia').value);
+  if(isNaN(p)||isNaN(d)){alert('Ingresa todos los datos');return;}
+  let destino,detalle;
+  if(p>5000){
+    if(d>500){destino='✈️ Viaje Internacional';detalle='Presupuesto alto y distancia larga: ¡el mundo te espera!';}
+    else     {destino='🏖️ Playa Nacional';    detalle='Presupuesto alto y distancia corta: disfruta una playa nacional de lujo.';}
+  } else {
+    if(d>500){destino='🏕️ Aventura Económica';detalle='Presupuesto moderado y distancia larga: explora sin gastar de más.';}
+    else     {destino='🏠 Destino Local';      detalle='Presupuesto ajustado y distancia corta: relájate cerca de casa.';}
+  }
+  showResult(destino, detalle);
+}
+function resetForm(){['presupuesto','distancia'].forEach(id=>document.getElementById(id).value='');hideResult();}
+</script>
+</body></html>
