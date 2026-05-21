@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3.10 Vacaciones</title>
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+<div class="bg-pattern"></div>
+<div class="floaties">
+  <div class="floaty" style="top:15%;left:4%;font-size:22px;animation-duration:8s;">🌴</div>
+  <div class="floaty" style="top:60%;right:5%;font-size:16px;animation-duration:10s;animation-delay:-3s;">⭐</div>
+  <div class="floaty" style="top:35%;right:3%;font-size:20px;animation-duration:7s;animation-delay:-2s;">🌸</div>
+</div>
+<nav class="navbar">
+  <a href="../index.html" class="nav-logo"><div class="nav-logo-icon">🐢</div><span class="nav-logo-text">TurtleLand</span></a>
+  <button class="nav-hamburger" onclick="toggleNav()">☰</button>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="../index.html">Inicio</a></li>
+    <li><a href="ej01.html">3.1</a></li><li><a href="ej02.html">3.2</a></li>
+    <li><a href="ej03.html">3.3</a></li><li><a href="ej04.html">3.4</a></li>
+    <li><a href="ej05.html">3.5</a></li><li><a href="ej06.html">3.6</a></li>
+    <li><a href="ej07.html">3.7</a></li><li><a href="ej08.html">3.8</a></li>
+    <li><a href="ej09.html">3.9</a></li><li><a href="ej10.html">3.10</a></li>
+    <li><a href="ej11.html">3.11</a></li><li><a href="ej12.html">3.12</a></li>
+    <li><a href="ej13.html">3.13</a></li>
+  </ul>
+</nav>
+<div class="exercise-page">
+  <a href="../index.html" class="back-link">← Volver al inicio</a>
+  <div class="exercise-hero fade-in visible">
+    <div class="ex-number-badge">🌴 Ejercicio 3.10</div>
+    <h1 class="ex-title">Vacaciones</h1>
+    <p class="ex-desc">Determina a qué destino puedes ir según tu presupuesto y tarifa por km (ida y vuelta): México 750km, Puerto Vallarta 800km, Acapulco 1200km, Cancún 1800km.</p>
+  </div>
+  <div class="panel-container">
+    <div class="panel fade-in">
+      <div class="panel-title"><div class="panel-icon">✨</div>Formulario</div>
+      <div class="form-group"><label class="form-label">Presupuesto disponible ($)</label><input type="number" id="presupuesto10" class="form-input" placeholder="Ej: 1500" min="0" step="10"></div>
+<div class="form-group"><label class="form-label">Tarifa por kilómetro ($)</label><input type="number" id="tarifa10" class="form-input" placeholder="Ej: 0.80" min="0" step="0.01"></div>
+<div style="background:var(--soft-purple);border-radius:16px;padding:14px;">
+  <div style="font-family:Fredoka One,cursive;font-size:13px;color:var(--purple-deep);margin-bottom:8px;">🗺️ Destinos</div>
+  <div style="font-family:Nunito,sans-serif;font-size:12px;color:var(--text-mid);line-height:1.8;">🏛️ México 750km · 🏖️ P.V. 800km · 🌊 Acapulco 1200km · 🐠 Cancún 1800km</div>
+</div>
+      <button class="btn btn-primary" onclick="ejercicio10()" style="width:100%;">🌴 ¿A dónde voy?</button>
+      <br><br>
+      <div id="result10" class="result-box">
+        <div class="result-text" style="opacity:0.5;font-size:16px;">Ingresa los datos para comenzar ✨</div>
+      </div>
+    </div>
+    <div class="panel fade-in">
+      <div class="panel-title"><div class="panel-icon">📝</div>Representaciones</div>
+      <div class="tabs">
+        <button class="tab-btn active" onclick="switchTab('pseudo10')">Pseudocódigo</button>
+        <button class="tab-btn" onclick="switchTab('ns10')">Diagrama N/S</button>
+      </div>
+      <div id="tab-pseudo10" class="tab-content active">
+        <div class="code-block"><span class="code-comment">// Ejercicio 3.10 — Vacaciones</span>
+<span class="code-keyword">INICIO</span>
+  <span class="code-keyword">LEER</span> presupuesto, tarifa
+  <span class="code-comment">// Costo = km × tarifa × 2 (ida y vuelta)</span>
+  <span class="code-keyword">SI</span> pres >= <span class="code-value">1800</span>*tarifa*<span class="code-value">2</span> → <span class="code-value">"Cancún"</span>
+  <span class="code-keyword">SINO SI</span> >= <span class="code-value">1200</span>*tarifa*<span class="code-value">2</span>  → <span class="code-value">"Acapulco"</span>
+  <span class="code-keyword">SINO SI</span> >= <span class="code-value">800</span>*tarifa*<span class="code-value">2</span>   → <span class="code-value">"Pto Vallarta"</span>
+  <span class="code-keyword">SINO SI</span> >= <span class="code-value">750</span>*tarifa*<span class="code-value">2</span>   → <span class="code-value">"México"</span>
+  <span class="code-keyword">SINO</span>                        → <span class="code-value">"Casa"</span>
+  <span class="code-keyword">ESCRIBIR</span> destino
+<span class="code-keyword">FIN</span></div>
+      </div>
+      <div id="tab-ns10" class="tab-content">
+        <table class="ns-table">
+  <tr><td class="ns-header" colspan="2">Vacaciones</td></tr>
+  <tr><td colspan="2" style="background:var(--soft-purple);font-weight:700;">LEER presupuesto, tarifa</td></tr>
+  <tr><td class="ns-cond" colspan="2">¿pres ≥ Cancún (1800×tar×2)?</td></tr>
+  <tr><td class="ns-true">Cancún 🐠</td><td class="ns-false">¿≥ Acapulco? SÍ→Acapulco<br>¿≥ P.V.? SÍ→P.V.<br>¿≥ México? SÍ→México<br>NO→Casa 🏠</td></tr>
+  <tr><td colspan="2" class="ns-action">ESCRIBIR destino</td></tr>
+</table>
+      </div>
+    </div>
+  </div>
+</div>
+<footer class="footer">
+  <div class="footer-blob"></div>
+  <div style="position:relative;z-index:1;">
+    <div class="footer-logo">TurtleLand</div>
+    <div class="footer-copy">Ejercicio 3.10 Problemas de Decisión </div>
+  </div>
+</footer>
+<script src="../js/decisiones.js"></script>
+</body>
+</html>
+

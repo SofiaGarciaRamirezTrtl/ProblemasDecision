@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3.3 Regalo San Valentín</title>
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+<div class="bg-pattern"></div>
+<div class="floaties">
+  <div class="floaty" style="top:15%;left:4%;font-size:22px;animation-duration:8s;">🎁</div>
+  <div class="floaty" style="top:55%;right:5%;font-size:20px;animation-duration:9s;animation-delay:-2s;">💌</div>
+  <div class="floaty" style="top:30%;right:3%;font-size:18px;animation-duration:11s;animation-delay:-4s;">🌹</div>
+</div>
+<nav class="navbar">
+  <a href="../index.html" class="nav-logo"><div class="nav-logo-icon">🐢</div><span class="nav-logo-text">TurtleLand</span></a>
+  <button class="nav-hamburger" onclick="toggleNav()">☰</button>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="../index.html">Inicio</a></li>
+    <li><a href="ej01.html">3.1</a></li><li><a href="ej02.html">3.2</a></li>
+    <li><a href="ej03.html" class="active">3.3</a></li><li><a href="ej04.html">3.4</a></li>
+    <li><a href="ej05.html">3.5</a></li><li><a href="ej06.html">3.6</a></li>
+    <li><a href="ej07.html">3.7</a></li><li><a href="ej08.html">3.8</a></li>
+    <li><a href="ej09.html">3.9</a></li><li><a href="ej10.html">3.10</a></li>
+    <li><a href="ej11.html">3.11</a></li><li><a href="ej12.html">3.12</a></li>
+    <li><a href="ej13.html">3.13</a></li>
+  </ul>
+</nav>
+<div class="exercise-page">
+  <a href="../index.html" class="back-link">← Volver al inicio</a>
+  <div class="exercise-hero fade-in visible">
+    <div class="ex-number-badge">🎁 Ejercicio 3.3</div>
+    <h1 class="ex-title">Regalo de San Valentín</h1>
+    <p class="ex-desc">El 14 de febrero, decide qué regalo comprar según tu presupuesto: Tarjeta ($0–$10), Chocolates ($11–$100), Flores ($101–$250) o Anillo (más de $251).</p>
+  </div>
+  <div class="panel-container">
+    <div class="panel fade-in">
+      <div class="panel-title"><div class="panel-icon">✨</div>Formulario</div>
+      <div class="form-group">
+        <label class="form-label">Presupuesto disponible ($)</label>
+        <input type="number" id="presupuesto03" class="form-input" placeholder="Ej: 150.00" min="0" step="0.01">
+      </div>
+      <button class="btn btn-primary" onclick="ejercicio03()" style="width:100%;">🎁 ¿Qué regalo compro?</button>
+      <br><br>
+      <div id="result03" class="result-box">
+        <div class="result-text" style="opacity:0.5;font-size:16px;">Ingresa tu presupuesto ✨</div>
+      </div>
+      <br>
+      <div style="background:var(--soft-purple);border-radius:16px;padding:16px;">
+        <div style="font-family:'Fredoka One',cursive;font-size:14px;color:var(--purple-deep);margin-bottom:10px;">💝 Tabla de regalos</div>
+        <table style="width:100%;font-size:13px;border-collapse:collapse;">
+          <tr style="background:var(--pink);border-radius:8px;">
+            <th style="padding:6px 10px;text-align:left;color:var(--purple-deep);font-family:'Nunito',sans-serif;">Regalo</th>
+            <th style="padding:6px 10px;text-align:right;color:var(--purple-deep);font-family:'Nunito',sans-serif;">Rango</th>
+          </tr>
+          <tr><td style="padding:6px 10px;font-family:'Nunito',sans-serif;font-weight:600;">💌 Tarjeta</td><td style="padding:6px 10px;text-align:right;font-family:'Nunito',sans-serif;">$0 – $10</td></tr>
+          <tr style="background:rgba(255,182,217,0.2);"><td style="padding:6px 10px;font-family:'Nunito',sans-serif;font-weight:600;">🍫 Chocolates</td><td style="padding:6px 10px;text-align:right;font-family:'Nunito',sans-serif;">$11 – $100</td></tr>
+          <tr><td style="padding:6px 10px;font-family:'Nunito',sans-serif;font-weight:600;">💐 Flores</td><td style="padding:6px 10px;text-align:right;font-family:'Nunito',sans-serif;">$101 – $250</td></tr>
+          <tr style="background:rgba(255,182,217,0.2);"><td style="padding:6px 10px;font-family:'Nunito',sans-serif;font-weight:600;">💍 Anillo</td><td style="padding:6px 10px;text-align:right;font-family:'Nunito',sans-serif;">Más de $251</td></tr>
+        </table>
+      </div>
+    </div>
+    <div class="panel fade-in">
+      <div class="panel-title"><div class="panel-icon">📝</div>Representaciones</div>
+      <div class="tabs">
+        <button class="tab-btn active" onclick="switchTab('pseudo03')">Pseudocódigo</button>
+        <button class="tab-btn" onclick="switchTab('flow03')">Flujo</button>
+      </div>
+      <div id="tab-pseudo03" class="tab-content active">
+        <div class="code-block">
+<span class="code-comment">// Ejercicio 3.3 — Regalo San Valentín</span>
+<span class="code-keyword">INICIO</span>
+  <span class="code-keyword">LEER</span> presupuesto
+  <span class="code-keyword">SI</span> presupuesto <= <span class="code-value">10</span> <span class="code-keyword">ENTONCES</span>
+    <span class="code-keyword">ESCRIBIR</span> <span class="code-value">"Tarjeta"</span>
+  <span class="code-keyword">SINO SI</span> presupuesto <= <span class="code-value">100</span> <span class="code-keyword">ENTONCES</span>
+    <span class="code-keyword">ESCRIBIR</span> <span class="code-value">"Chocolates"</span>
+  <span class="code-keyword">SINO SI</span> presupuesto <= <span class="code-value">250</span> <span class="code-keyword">ENTONCES</span>
+    <span class="code-keyword">ESCRIBIR</span> <span class="code-value">"Flores"</span>
+  <span class="code-keyword">SINO</span>
+    <span class="code-keyword">ESCRIBIR</span> <span class="code-value">"Anillo"</span>
+  <span class="code-keyword">FIN_SI</span>
+<span class="code-keyword">FIN</span>
+        </div>
+      </div>
+      <div id="tab-flow03" class="tab-content">
+        <div class="flowchart-container">
+          <svg class="flowchart-svg" viewBox="0 0 300 560" xmlns="http://www.w3.org/2000/svg">
+            <defs><marker id="arr3" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#9B72CF"/></marker></defs>
+            <ellipse cx="150" cy="30" rx="50" ry="20" fill="#FF6EB4" stroke="#C44D9E" stroke-width="2"/>
+            <text x="150" y="35" text-anchor="middle" fill="white" font-family="Fredoka One,cursive" font-size="13">INICIO</text>
+            <line x1="150" y1="50" x2="150" y2="75" stroke="#9B72CF" stroke-width="2" marker-end="url(#arr3)"/>
+            <rect x="70" y="75" width="160" height="36" rx="8" fill="#EDE0FF" stroke="#C9B8FF" stroke-width="2"/>
+            <text x="150" y="98" text-anchor="middle" fill="#3D1A6B" font-family="Nunito,sans-serif" font-weight="700" font-size="12">LEER presupuesto</text>
+            <line x1="150" y1="111" x2="150" y2="138" stroke="#9B72CF" stroke-width="2" marker-end="url(#arr3)"/>
+            <!-- Decision 1 -->
+            <polygon points="150,138 230,165 150,192 70,165" fill="#FFF0F8" stroke="#FF6EB4" stroke-width="2"/>
+            <text x="150" y="161" text-anchor="middle" fill="#3D1A6B" font-family="Nunito,sans-serif" font-weight="700" font-size="11">pres ≤ 10?</text>
+            <text x="74" y="180" fill="#E91E8C" font-family="Nunito,sans-serif" font-size="10" font-weight="700">SÍ</text>
+            <line x1="70" y1="165" x2="30" y2="165" stroke="#9B72CF" stroke-width="2"/>
+            <line x1="30" y1="165" x2="30" y2="215" stroke="#9B72CF" stroke-width="2" marker-end="url(#arr3)"/>
+            <rect x="5" y="215" width="54" height="34" rx="6" fill="#FFB6D9" stroke="#FF6EB4" stroke-width="2"/>
+            <text x="32" y="228" text-anchor="middle" fill="#3D1A6B" font-family="Nunito,sans-serif" font-weight="700" font-size="9">Tarjeta</text>
+            <text x="32" y="240" text-anchor="middle" fill="#6B3FA0" font-family="Nunito,sans-serif" font-size="9">💌</text>
+            <text x="228" y="180" fill="#9B72CF" font-family="Nunito,sans-serif" font-size="10" font-weight="700">NO</text>
+            <line x1="230" y1="165" x2="230" y2="200" stroke="#9B72CF" stroke-width="2" marker-end="url(#arr3)"/>
+            <!-- Decision 2 -->
+            <polygon points="230,200 295,222 230,244 165,222" fill="#FFF0F8" stroke="#FF6EB4" stroke-width="2"/>
+            <text x="230" y="218" text-anchor="middle" fill="#3D1A6B" font-family="Nunito,sans-serif" font-weight="700" font-size="10">pres ≤ 100?</text>
+            <text x="168" y="238" fill="#E91E8C" font-family="Nunito,sans-serif" font-size="9" font-weight="700">SÍ</text>
+            <line x1="165" y1="222" x2="130" y2="222" stroke="#9B72CF" stroke-width="2"/>
+            <line x1="130" y1="222" x2="130" y2="260" stroke="#9B72CF" stroke-width="2" marker-end="url(#arr3)"/>
+            <rect x="102" y="260" width="56" height="34" rx="6" fill="#C9B8FF" stroke="#9B72CF" stroke-width="2"/>
+            <text x="130" y="273" text-anchor="middle" fill="#3D1A6B" font-family="Nunito,sans-serif" font-weight="700" font-size="9">Chocolates</text>
+            <text x="130" y="285" text-anchor="middle" fill="#6B3FA0" font-family="Nunito,sans-serif" font-size="9">🍫</text>
+            <text x="293" y="238" fill="#9B72CF" font-family="Nunito,sans-serif" font-size="9" font-weight="700">NO</text>
+            <line x1="295" y1="222" x2="295" y2="295" stroke="#9B72CF" stroke-width="2" marker-end="url(#arr3)"/>
+            <!-- Decision 3 -->
+            <polygon points="230,295 295,318 230,341 165,318" fill="#FFF0F8" stroke="#FF6EB4" stroke-width="2"/>
+            <text x="230" y="314" text-anchor="middle" fill="#3D1A6B" font-family="Nunito,sans-serif" font-weight="700" font-size="10">pres ≤ 250?</text>
+            <text x="168" y="335" fill="#E91E8C" font-family="Nunito,sans-serif" font-size="9" font-weight="700">SÍ</text>
+            <line x1="165" y1="318" x2="200" y2="360" stroke="#9B72CF" stroke-width="2" marker-end="url(#arr3)"/>
+            <rect x="178" y="360" width="44" height="34" rx="6" fill="#FFB6D9" stroke="#FF6EB4" stroke-width="2"/>
+            <text x="200" y="373" text-anchor="middle" fill="#3D1A6B" font-family="Nunito,sans-serif" font-weight="700" font-size="9">Flores</text>
+            <text x="200" y="385" text-anchor="middle" fill="#6B3FA0" font-family="Nunito,sans-serif" font-size="9">💐</text>
+            <text x="293" y="335" fill="#9B72CF" font-family="Nunito,sans-serif" font-size="9" font-weight="700">NO</text>
+            <line x1="295" y1="341" x2="270" y2="360" stroke="#9B72CF" stroke-width="2" marker-end="url(#arr3)"/>
+            <rect x="255" y="360" width="44" height="34" rx="6" fill="#C9B8FF" stroke="#9B72CF" stroke-width="2"/>
+            <text x="277" y="373" text-anchor="middle" fill="#3D1A6B" font-family="Nunito,sans-serif" font-weight="700" font-size="9">Anillo</text>
+            <text x="277" y="385" text-anchor="middle" fill="#6B3FA0" font-family="Nunito,sans-serif" font-size="9">💍</text>
+            <!-- Convergencia -->
+            <line x1="30" y1="249" x2="30" y2="470" stroke="#9B72CF" stroke-width="2"/>
+            <line x1="30" y1="470" x2="142" y2="470" stroke="#9B72CF" stroke-width="2" marker-end="url(#arr3)"/>
+            <line x1="130" y1="294" x2="130" y2="470" stroke="#9B72CF" stroke-width="2"/>
+            <line x1="200" y1="394" x2="200" y2="470" stroke="#9B72CF" stroke-width="2"/>
+            <line x1="277" y1="394" x2="277" y2="470" stroke="#9B72CF" stroke-width="2"/>
+            <line x1="277" y1="470" x2="158" y2="470" stroke="#9B72CF" stroke-width="2"/>
+            <ellipse cx="150" cy="510" rx="50" ry="20" fill="#FF6EB4" stroke="#C44D9E" stroke-width="2"/>
+            <line x1="150" y1="470" x2="150" y2="489" stroke="#9B72CF" stroke-width="2" marker-end="url(#arr3)"/>
+            <text x="150" y="515" text-anchor="middle" fill="white" font-family="Fredoka One,cursive" font-size="13">FIN</text>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<footer class="footer">
+  <div class="footer-blob"></div>
+  <div style="position:relative;z-index:1;">
+    <div class="footer-logo">TurtleLand</div>
+    <div class="footer-copy">Ejercicio 3.3 Problemas de Decisión </div>
+  </div>
+</footer>
+
+<script src="../js/decisiones.js"></script>
+</body>
+</html> 

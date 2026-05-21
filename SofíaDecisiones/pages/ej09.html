@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3.9 Póliza de Seguro</title>
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+<div class="bg-pattern"></div>
+<div class="floaties">
+  <div class="floaty" style="top:15%;left:4%;font-size:22px;animation-duration:8s;">🚘</div>
+  <div class="floaty" style="top:60%;right:5%;font-size:16px;animation-duration:10s;animation-delay:-3s;">⭐</div>
+  <div class="floaty" style="top:35%;right:3%;font-size:20px;animation-duration:7s;animation-delay:-2s;">🌸</div>
+</div>
+<nav class="navbar">
+  <a href="../index.html" class="nav-logo"><div class="nav-logo-icon">🐢</div><span class="nav-logo-text">TurtleLand</span></a>
+  <button class="nav-hamburger" onclick="toggleNav()">☰</button>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="../index.html">Inicio</a></li>
+    <li><a href="ej01.html">3.1</a></li><li><a href="ej02.html">3.2</a></li>
+    <li><a href="ej03.html">3.3</a></li><li><a href="ej04.html">3.4</a></li>
+    <li><a href="ej05.html">3.5</a></li><li><a href="ej06.html">3.6</a></li>
+    <li><a href="ej07.html">3.7</a></li><li><a href="ej08.html">3.8</a></li>
+    <li><a href="ej09.html">3.9</a></li><li><a href="ej10.html">3.10</a></li>
+    <li><a href="ej11.html">3.11</a></li><li><a href="ej12.html">3.12</a></li>
+    <li><a href="ej13.html">3.13</a></li>
+  </ul>
+</nav>
+<div class="exercise-page">
+  <a href="../index.html" class="back-link">← Volver al inicio</a>
+  <div class="exercise-hero fade-in visible">
+    <div class="ex-number-badge">🚘 Ejercicio 3.9</div>
+    <h1 class="ex-title">Póliza de Seguro</h1>
+    <p class="ex-desc">Calcula el costo de una póliza de auto. Plan A base $1,200 / Plan B base $950. Cargos sobre la base: +10% alcohol, +5% lentes, +5% enfermedad, +20% si mayor de 40 años (si no, +10%).</p>
+  </div>
+  <div class="panel-container">
+    <div class="panel fade-in">
+      <div class="panel-title"><div class="panel-icon">✨</div>Formulario</div>
+      <div class="form-group"><label class="form-label">Tipo de plan</label>
+<select id="plan09" class="form-input form-select">
+  <option value="A">Plan A — Cobertura Amplia ($1,200 base)</option>
+  <option value="B">Plan B — Daños a Terceros ($950 base)</option>
+</select></div>
+<div class="form-group"><label class="form-label">Edad del conductor</label><input type="number" id="edad09" class="form-input" placeholder="Ej: 35" min="16" max="100"></div>
+<div style="display:flex;flex-direction:column;gap:10px;margin-bottom:18px;">
+  <label style="display:flex;align-items:center;gap:10px;font-family:Nunito,sans-serif;font-weight:700;font-size:14px;color:var(--text-mid);cursor:pointer;"><input type="checkbox" id="alcohol09" style="width:18px;height:18px;accent-color:var(--pink-bright);"> Hábito de beber alcohol (+10%)</label>
+  <label style="display:flex;align-items:center;gap:10px;font-family:Nunito,sans-serif;font-weight:700;font-size:14px;color:var(--text-mid);cursor:pointer;"><input type="checkbox" id="lentes09" style="width:18px;height:18px;accent-color:var(--pink-bright);"> Usa lentes (+5%)</label>
+  <label style="display:flex;align-items:center;gap:10px;font-family:Nunito,sans-serif;font-weight:700;font-size:14px;color:var(--text-mid);cursor:pointer;"><input type="checkbox" id="enfermedad09" style="width:18px;height:18px;accent-color:var(--pink-bright);"> Padece enfermedad (+5%)</label>
+</div>
+      <button class="btn btn-primary" onclick="ejercicio09()" style="width:100%;">🚘 Calcular póliza</button>
+      <br><br>
+      <div id="result09" class="result-box">
+        <div class="result-text" style="opacity:0.5;font-size:16px;">Ingresa los datos para comenzar ✨</div>
+      </div>
+    </div>
+    <div class="panel fade-in">
+      <div class="panel-title"><div class="panel-icon">📝</div>Representaciones</div>
+      <div class="tabs">
+        <button class="tab-btn active" onclick="switchTab('pseudo09')">Pseudocódigo</button>
+        <button class="tab-btn" onclick="switchTab('ns09')">Diagrama N/S</button>
+      </div>
+      <div id="tab-pseudo09" class="tab-content active">
+        <div class="code-block"><span class="code-comment">// Ejercicio 3.9 — Póliza de Seguro</span>
+<span class="code-keyword">INICIO</span>
+  <span class="code-keyword">LEER</span> plan, edad, alcohol, lentes, enfermedad
+  <span class="code-keyword">SI</span> plan = <span class="code-value">"A"</span> → base = <span class="code-value">1200</span>
+  <span class="code-keyword">SINO</span>           → base = <span class="code-value">950</span>
+  cargos ← <span class="code-value">0</span>
+  <span class="code-keyword">SI</span> alcohol    → cargos += base * <span class="code-value">0.10</span>
+  <span class="code-keyword">SI</span> lentes     → cargos += base * <span class="code-value">0.05</span>
+  <span class="code-keyword">SI</span> enfermedad → cargos += base * <span class="code-value">0.05</span>
+  <span class="code-keyword">SI</span> edad > <span class="code-value">40</span>  → cargos += base * <span class="code-value">0.20</span>
+  <span class="code-keyword">SINO</span>           → cargos += base * <span class="code-value">0.10</span>
+  total ← base + cargos
+  <span class="code-keyword">ESCRIBIR</span> total
+<span class="code-keyword">FIN</span></div>
+      </div>
+      <div id="tab-ns09" class="tab-content">
+        <table class="ns-table">
+  <tr><td class="ns-header" colspan="2">Póliza de Seguro</td></tr>
+  <tr><td colspan="2" style="background:var(--soft-purple);font-weight:700;">LEER plan, edad, alcohol, lentes, enfermedad</td></tr>
+  <tr><td class="ns-cond" colspan="2">¿plan = "A"?</td></tr>
+  <tr><td class="ns-true">base ← 1200</td><td class="ns-false">base ← 950</td></tr>
+  <tr><td colspan="2" class="ns-action">cargos ← 0<br>SI alcohol → +10% | SI lentes → +5% | SI enfermedad → +5%</td></tr>
+  <tr><td class="ns-cond" colspan="2">¿edad &gt; 40?</td></tr>
+  <tr><td class="ns-true">+20%</td><td class="ns-false">+10%</td></tr>
+  <tr><td colspan="2" class="ns-action">total ← base + cargos · ESCRIBIR total</td></tr>
+</table>
+      </div>
+    </div>
+  </div>
+</div>
+<footer class="footer">
+  <div class="footer-blob"></div>
+  <div style="position:relative;z-index:1;">
+    <div class="footer-logo">TurtleLand</div>
+    <div class="footer-copy">Ejercicio 3.9 Problemas de Decisión </div>
+  </div>
+</footer>
+<script src="../js/decisiones.js"></script>
+</body>
+</html>

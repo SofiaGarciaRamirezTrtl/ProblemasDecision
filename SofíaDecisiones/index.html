@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sofia Garcia Ejercicios de Decisión</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<div class="bg-pattern"></div>
+
+<div class="floaties">
+  <div class="floaty" style="top:10%;left:5%;font-size:24px;animation-duration:7s;">🌸</div>
+  <div class="floaty" style="top:25%;right:8%;font-size:18px;animation-duration:9s;animation-delay:-2s;">⭐</div>
+  <div class="floaty" style="top:60%;left:3%;font-size:20px;animation-duration:11s;animation-delay:-4s;">💜</div>
+  <div class="floaty" style="top:75%;right:5%;font-size:16px;animation-duration:8s;animation-delay:-1s;">🌟</div>
+  <div class="floaty" style="top:40%;left:2%;font-size:22px;animation-duration:12s;animation-delay:-6s;">🎀</div>
+  <div class="floaty" style="top:50%;right:3%;font-size:14px;animation-duration:10s;animation-delay:-3s;">✨</div>
+</div>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <a href="index.html" class="nav-logo">
+    <div class="nav-logo-icon">🐢</div>
+    <span class="nav-logo-text">TurtleLand</span>
+  </a>
+
+  <button class="nav-hamburger" onclick="toggleNav()">☰</button>
+
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html" class="active">Inicio</a></li>
+    <li><a href="#ejercicios">Ejercicios</a></li>
+    <li><a href="pages/ej01.html">3.1</a></li>
+    <li><a href="pages/ej02.html">3.2</a></li>
+    <li><a href="pages/ej03.html">3.3</a></li>
+    <li><a href="pages/ej04.html">3.4</a></li>
+    <li><a href="pages/ej05.html">3.5</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-blob-1"></div>
+  <div class="hero-blob-2"></div>
+
+  <div class="hero-content fade-in visible">
+    <div class="hero-image-wrap">
+      <img src="img/sofia.jpeg" alt="deku" class="hero-image">
+    </div>
+    <div class="hero-badge">✨ Unidad 3 Decisiones</div>
+
+    <h1 class="hero-title">Decisiones</h1>
+
+    <div class="hero-stars">
+      <span class="star-item">🌸</span>
+      <span class="star-item">⭐</span>
+      <span class="star-item">🎀</span>
+      <span class="star-item">⭐</span>
+      <span class="star-item">🌸</span>
+    </div>
+
+    <p class="hero-subtitle">by Sofía García</p>
+    <p class="hero-desc">Problemas de Decisión en JavaScript.
+    </p>
+
+    <div class="hero-buttons">
+      <a href="#ejercicios" class="btn btn-primary">🐢 Ver Ejercicios</a>
+    </div>
+
+    <div class="stats-row">
+      <div class="stat-item">
+        <div class="stat-number">13</div>
+        <div class="stat-label">Ejercicios</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WAVE -->
+<div class="wave-divider">
+  <svg viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,40 C240,80 480,0 720,40 C960,80 1200,0 1440,40 L1440,80 L0,80 Z" fill="#EDE0FF"/>
+  </svg>
+</div>
+
+<!-- EJERCICIOS -->
+<section class="section section-purple" id="ejercicios">
+  <div class="section-header fade-in">
+    <div class="section-tag">🐢 Unidad 3 · Decisiones</div>
+    <h2 class="section-title">Problemas de Decisión</h2>
+    <p class="section-sub">Haga clic en los ejercicios✨</p>
+  </div>
+
+  <div class="cards-grid">
+
+    <a href="pages/ej01.html" class="exercise-card fade-in">
+      <div style="display:flex;align-items:center;gap:12px;">
+        <div class="card-number">1</div>
+        <div class="card-icon">🗳️</div>
+      </div>
+      <div class="card-title">Ejercicio 3.1 — Derecho al Voto</div>
+      <div class="card-desc">Determina si una persona puede votar según su edad en las próximas elecciones.</div>
+      <div style="display:flex;align-items:center;justify-content:space-between;">
+        <div class="card-arrow">→</div>
+      </div>
+    </a>
+
+    <a href="pages/ej02.html" class="exercise-card fade-in">
+      <div style="display:flex;align-items:center;gap:12px;">
+        <div class="card-number">2</div>
+        <div class="card-icon">💼</div>
+      </div>
+      <div class="card-title">Ejercicio 3.2 — Sueldo Semanal</div>
+      <div class="card-desc">Calcula el sueldo semanal considerando horas normales y horas extras (doble pago).</div>
+      <div style="display:flex;align-items:center;justify-content:space-between;">
+        <div class="card-arrow">→</div>
+      </div>
+    </a>
+
+    <a href="pages/ej03.html" class="exercise-card fade-in">
+      <div style="display:flex;align-items:center;gap:12px;">
+        <div class="card-number">3</div>
+        <div class="card-icon">🎁</div>
+      </div>
+      <div class="card-title">Ejercicio 3.3 — Regalo San Valentín</div>
+      <div class="card-desc">Elige el regalo perfecto según el presupuesto disponible: tarjeta, chocolates, flores o anillo.</div>
+      <div style="display:flex;align-items:center;justify-content:space-between;">
+        <div class="card-arrow">→</div>
+      </div>
+    </a>
+
+    <a href="pages/ej04.html" class="exercise-card fade-in">
+      <div style="display:flex;align-items:center;gap:12px;">
+        <div class="card-number">4</div>
+        <div class="card-icon">🚗</div>
+      </div>
+      <div class="card-title">Ejercicio 3.4 — Estacionamiento</div>
+      <div class="card-desc">Calcula el costo del estacionamiento con tarifas escalonadas por horas.</div>
+      <div style="display:flex;align-items:center;justify-content:space-between;">
+        <div class="card-arrow">→</div>
+      </div>
+    </a>
+
+    <a href="pages/ej05.html" class="exercise-card fade-in">
+      <div style="display:flex;align-items:center;gap:12px;">
+        <div class="card-number">5</div>
+        <div class="card-icon">👥</div>
+      </div>
+      <div class="card-title">Ejercicio 3.5 — Menor Edad</div>
+      <div class="card-desc">Encuentra la persona de menor edad entre tres, mostrando su nombre y edad.</div>
+      <div style="display:flex;align-items:center;justify-content:space-between;">
+        <div class="card-arrow">→</div>
+      </div>
+    </a>
+
+    <a href="pages/ej06.html" class="exercise-card fade-in">
+      <div style="display:flex;align-items:center;gap:12px;">
+        <div class="card-number">6</div>
+        <div class="card-icon">🏷️</div>
+      </div>
+      <div class="card-title">Ejercicio 3.6 — Descuento de Artículo</div>
+      <div class="card-desc">Determina el costo y descuento (10%, 12% o 15%) según el precio del artículo.</div>
+      <div style="display:flex;align-items:center;justify-content:space-between;">
+        <div class="card-arrow">→</div>
+      </div>
+    </a>
+
+    <a href="pages/ej07.html" class="exercise-card fade-in">
+      <div style="display:flex;align-items:center;gap:12px;">
+        <div class="card-number">7</div>
+        <div class="card-icon">🎓</div>
+      </div>
+      <div class="card-title">Ejercicio 3.7 — Becas Universitarias</div>
+      <div class="card-desc">Asigna becas a estudiantes según su edad y promedio académico.</div>
+      <div style="display:flex;align-items:center;justify-content:space-between;">
+        <div class="card-arrow">→</div>
+      </div>
+    </a>
+
+    <a href="pages/ej08.html" class="exercise-card fade-in">
+      <div style="display:flex;align-items:center;gap:12px;">
+        <div class="card-number">8</div>
+        <div class="card-icon">🏆</div>
+      </div>
+      <div class="card-title">Ejercicio 3.8 — Bono Empleados</div>
+      <div class="card-desc">Calcula el bono mensual por antigüedad o sueldo (el mayor) para empleados de tienda.</div>
+      <div style="display:flex;align-items:center;justify-content:space-between;">
+        <div class="card-arrow">→</div>
+      </div>
+    </a>
+
+    <a href="pages/ej09.html" class="exercise-card fade-in">
+      <div style="display:flex;align-items:center;gap:12px;">
+        <div class="card-number">9</div>
+        <div class="card-icon">🚘</div>
+      </div>
+      <div class="card-title">Ejercicio 3.9 — Póliza de Seguro</div>
+      <div class="card-desc">Determina el costo de contratar una póliza de seguro para auto (plan A o B).</div>
+      <div style="display:flex;align-items:center;justify-content:space-between;">
+        <div class="card-arrow">→</div>
+      </div>
+    </a>
+
+    <a href="pages/ej10.html" class="exercise-card fade-in">
+      <div style="display:flex;align-items:center;gap:12px;">
+        <div class="card-number">10</div>
+        <div class="card-icon">🌴</div>
+      </div>
+      <div class="card-title">Ejercicio 3.10 — Vacaciones</div>
+      <div class="card-desc">Determina a qué destino puedes ir de vacaciones según tu presupuesto y km por recorrer.</div>
+      <div style="display:flex;align-items:center;justify-content:space-between;">
+        <div class="card-arrow">→</div>
+      </div>
+    </a>
+
+    <a href="pages/ej11.html" class="exercise-card fade-in">
+      <div style="display:flex;align-items:center;gap:12px;">
+        <div class="card-number">11</div>
+        <div class="card-icon">📅</div>
+      </div>
+      <div class="card-title">Ejercicio 3.11 — Bono Antigüedad</div>
+      <div class="card-desc">Calcula el bono según los años de antigüedad del trabajador (1 a 5+ años).</div>
+      <div style="display:flex;align-items:center;justify-content:space-between;">
+        <div class="card-arrow">→</div>
+      </div>
+    </a>
+
+    <a href="pages/ej12.html" class="exercise-card fade-in">
+      <div style="display:flex;align-items:center;gap:12px;">
+        <div class="card-number">12</div>
+        <div class="card-icon">⏱️</div>
+      </div>
+      <div class="card-title">Ejercicio 3.12 — Sueldo Avanzado</div>
+      <div class="card-desc">Sueldo con horas extra: doble (41-45), triple (46-50), y límite de 50 horas.</div>
+      <div style="display:flex;align-items:center;justify-content:space-between;">
+        <div class="card-arrow">→</div>
+      </div>
+    </a>
+
+    <a href="pages/ej13.html" class="exercise-card fade-in">
+      <div style="display:flex;align-items:center;gap:12px;">
+        <div class="card-number">13</div>
+        <div class="card-icon">🚌</div>
+      </div>
+      <div class="card-title">Ejercicio 3.13 — Viaje Escolar</div>
+      <div class="card-desc">Calcula el costo del pasaje según el número de alumnos que realizarán el viaje.</div>
+      <div style="display:flex;align-items:center;justify-content:space-between;">
+        <div class="card-arrow">→</div>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<!-- WAVE -->
+<div class="wave-divider">
+  <svg viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,40 C360,0 720,80 1080,40 C1260,20 1380,60 1440,40 L1440,80 L0,80 Z" fill="#FFF5FB"/>
+  </svg>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-blob"></div>
+  <div class="footer-blob2"></div>
+  <div style="position:relative;z-index:1;">
+    <div class="footer-logo">TurtleLand</div>
+    <div class="footer-tagline">Algoritmos de Decisión Unidad 3 </div>
+    <div class="footer-hearts">🌸 ⭐ 💜 ⭐ 🌸</div>
+    <div class="footer-copy">Hecho por Sofía García</div>
+  </div>
+</footer>
+
+<script>
+  function toggleNav() {
+    document.getElementById('navLinks').classList.toggle('open');
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>

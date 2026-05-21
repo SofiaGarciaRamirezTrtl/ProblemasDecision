@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3.13 Viaje Escolar</title>
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+<div class="bg-pattern"></div>
+<div class="floaties">
+  <div class="floaty" style="top:15%;left:4%;font-size:22px;animation-duration:8s;">🚌</div>
+  <div class="floaty" style="top:60%;right:5%;font-size:16px;animation-duration:10s;animation-delay:-3s;">⭐</div>
+  <div class="floaty" style="top:35%;right:3%;font-size:20px;animation-duration:7s;animation-delay:-2s;">🌸</div>
+</div>
+<nav class="navbar">
+  <a href="../index.html" class="nav-logo"><div class="nav-logo-icon">🐢</div><span class="nav-logo-text">TurtleLand</span></a>
+  <button class="nav-hamburger" onclick="toggleNav()">☰</button>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="../index.html">Inicio</a></li>
+    <li><a href="ej01.html">3.1</a></li><li><a href="ej02.html">3.2</a></li>
+    <li><a href="ej03.html">3.3</a></li><li><a href="ej04.html">3.4</a></li>
+    <li><a href="ej05.html">3.5</a></li><li><a href="ej06.html">3.6</a></li>
+    <li><a href="ej07.html">3.7</a></li><li><a href="ej08.html">3.8</a></li>
+    <li><a href="ej09.html">3.9</a></li><li><a href="ej10.html">3.10</a></li>
+    <li><a href="ej11.html">3.11</a></li><li><a href="ej12.html">3.12</a></li>
+    <li><a href="ej13.html">3.13</a></li>
+  </ul>
+</nav>
+<div class="exercise-page">
+  <a href="../index.html" class="back-link">← Volver al inicio</a>
+  <div class="exercise-hero fade-in visible">
+    <div class="ex-number-badge">🚌 Ejercicio 3.13</div>
+    <h1 class="ex-title">Viaje Escolar</h1>
+    <p class="ex-desc">Costo del pasaje por alumno según número de estudiantes: más de 100 → $20, 50-100 → $35, 20-49 → $40, menos de 20 → $70.</p>
+  </div>
+  <div class="panel-container">
+    <div class="panel fade-in">
+      <div class="panel-title"><div class="panel-icon">✨</div>Formulario</div>
+      <div class="form-group"><label class="form-label">Número de alumnos</label><input type="number" id="alumnos13" class="form-input" placeholder="Ej: 65" min="1"></div>
+<div style="background:var(--soft-purple);border-radius:16px;padding:14px;">
+  <div style="font-family:Fredoka One,cursive;font-size:13px;color:var(--purple-deep);margin-bottom:8px;">🎒 Tarifas</div>
+  <div style="font-family:Nunito,sans-serif;font-size:12px;color:var(--text-mid);line-height:1.8;">+100 alumnos → $20 · 50-100 → $35 · 20-49 → $40 · -20 → $70</div>
+</div>
+      <button class="btn btn-primary" onclick="ejercicio13()" style="width:100%;">🚌 Calcular pasaje</button>
+      <br><br>
+      <div id="result13" class="result-box">
+        <div class="result-text" style="opacity:0.5;font-size:16px;">Ingresa los datos para comenzar ✨</div>
+      </div>
+    </div>
+    <div class="panel fade-in">
+      <div class="panel-title"><div class="panel-icon">📝</div>Representaciones</div>
+      <div class="tabs">
+        <button class="tab-btn active" onclick="switchTab('pseudo13')">Pseudocódigo</button>
+        <button class="tab-btn" onclick="switchTab('ns13')">Diagrama N/S</button>
+      </div>
+      <div id="tab-pseudo13" class="tab-content active">
+        <div class="code-block"><span class="code-comment">// Ejercicio 3.13 — Viaje Escolar</span>
+<span class="code-keyword">INICIO</span>
+  <span class="code-keyword">LEER</span> numAlumnos
+  <span class="code-keyword">SI</span>      numAlumnos > <span class="code-value">100</span>  → costo = <span class="code-value">20</span>
+  <span class="code-keyword">SINO SI</span> numAlumnos >= <span class="code-value">50</span>  → costo = <span class="code-value">35</span>
+  <span class="code-keyword">SINO SI</span> numAlumnos >= <span class="code-value">20</span>  → costo = <span class="code-value">40</span>
+  <span class="code-keyword">SINO</span>                       → costo = <span class="code-value">70</span>
+  total ← numAlumnos * costo
+  <span class="code-keyword">ESCRIBIR</span> costo, total
+<span class="code-keyword">FIN</span></div>
+      </div>
+      <div id="tab-ns13" class="tab-content">
+        <table class="ns-table">
+  <tr><td class="ns-header" colspan="2">Viaje Escolar</td></tr>
+  <tr><td colspan="2" style="background:var(--soft-purple);font-weight:700;">LEER numAlumnos</td></tr>
+  <tr><td class="ns-cond" colspan="2">¿numAlumnos &gt; 100?</td></tr>
+  <tr><td class="ns-true">costo ← $20</td>
+      <td class="ns-false">¿≥50? SÍ→$35<br>¿≥20? SÍ→$40<br>NO→$70</td></tr>
+  <tr><td colspan="2" class="ns-action">total ← numAlumnos × costo<br>ESCRIBIR costo, total</td></tr>
+</table>
+      </div>
+    </div>
+  </div>
+</div>
+<footer class="footer">
+  <div class="footer-blob"></div>
+  <div style="position:relative;z-index:1;">
+    <div class="footer-logo">TurtleLand</div>
+    <div class="footer-copy">Ejercicio 3.13 Problemas de Decisión </div>
+  </div>
+</footer>
+<script src="../js/decisiones.js"></script>
+</body>
+</html>
+

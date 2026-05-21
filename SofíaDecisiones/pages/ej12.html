@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3.12 Sueldo Avanzado</title>
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+<div class="bg-pattern"></div>
+<div class="floaties">
+  <div class="floaty" style="top:15%;left:4%;font-size:22px;animation-duration:8s;">⏱️</div>
+  <div class="floaty" style="top:60%;right:5%;font-size:16px;animation-duration:10s;animation-delay:-3s;">⭐</div>
+  <div class="floaty" style="top:35%;right:3%;font-size:20px;animation-duration:7s;animation-delay:-2s;">🌸</div>
+</div>
+<nav class="navbar">
+  <a href="../index.html" class="nav-logo"><div class="nav-logo-icon">🐢</div><span class="nav-logo-text">TurtleLand</span></a>
+  <button class="nav-hamburger" onclick="toggleNav()">☰</button>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="../index.html">Inicio</a></li>
+    <li><a href="ej01.html">3.1</a></li><li><a href="ej02.html">3.2</a></li>
+    <li><a href="ej03.html">3.3</a></li><li><a href="ej04.html">3.4</a></li>
+    <li><a href="ej05.html">3.5</a></li><li><a href="ej06.html">3.6</a></li>
+    <li><a href="ej07.html">3.7</a></li><li><a href="ej08.html">3.8</a></li>
+    <li><a href="ej09.html">3.9</a></li><li><a href="ej10.html">3.10</a></li>
+    <li><a href="ej11.html">3.11</a></li><li><a href="ej12.html">3.12</a></li>
+    <li><a href="ej13.html">3.13</a></li>
+  </ul>
+</nav>
+<div class="exercise-page">
+  <a href="../index.html" class="back-link">← Volver al inicio</a>
+  <div class="exercise-hero fade-in visible">
+    <div class="ex-number-badge">⏱️ Ejercicio 3.12</div>
+    <h1 class="ex-title">Sueldo Avanzado</h1>
+    <p class="ex-desc">Sueldo con escalas: horas 1–40 tarifa normal, horas 41–45 al doble, horas 46–50 al triple. Más de 50 horas no está permitido.</p>
+  </div>
+  <div class="panel-container">
+    <div class="panel fade-in">
+      <div class="panel-title"><div class="panel-icon">✨</div>Formulario</div>
+      <div class="form-group"><label class="form-label">Horas trabajadas (máx. 50)</label><input type="number" id="horas12" class="form-input" placeholder="Ej: 47" min="0" max="50" step="0.5"></div>
+<div class="form-group"><label class="form-label">Pago por hora ($)</label><input type="number" id="pago12" class="form-input" placeholder="Ej: 60.00" min="0" step="0.01"></div>
+      <button class="btn btn-primary" onclick="ejercicio12()" style="width:100%;">⏱️ Calcular sueldo</button>
+      <br><br>
+      <div id="result12" class="result-box">
+        <div class="result-text" style="opacity:0.5;font-size:16px;">Ingresa los datos para comenzar ✨</div>
+      </div>
+    </div>
+    <div class="panel fade-in">
+      <div class="panel-title"><div class="panel-icon">📝</div>Representaciones</div>
+      <div class="tabs">
+        <button class="tab-btn active" onclick="switchTab('pseudo12')">Pseudocódigo</button>
+        <button class="tab-btn" onclick="switchTab('ns12')">Diagrama N/S</button>
+      </div>
+      <div id="tab-pseudo12" class="tab-content active">
+        <div class="code-block"><span class="code-comment">// Ejercicio 3.12 — Sueldo Avanzado</span>
+<span class="code-keyword">INICIO</span>
+  <span class="code-keyword">LEER</span> horas, pagoHora
+  <span class="code-keyword">SI</span> horas > <span class="code-value">50</span> <span class="code-keyword">ENTONCES</span>
+    <span class="code-keyword">ESCRIBIR</span> <span class="code-value">"Más de 50h no permitido"</span>
+  <span class="code-keyword">SINO</span>
+    sueldo ← MIN(horas,<span class="code-value">40</span>) * pagoHora
+    <span class="code-keyword">SI</span> horas > <span class="code-value">40</span>
+      sueldo += (MIN(horas,<span class="code-value">45</span>)-<span class="code-value">40</span>) * pagoHora * <span class="code-value">2</span>
+    <span class="code-keyword">SI</span> horas > <span class="code-value">45</span>
+      sueldo += (horas-<span class="code-value">45</span>) * pagoHora * <span class="code-value">3</span>
+    <span class="code-keyword">ESCRIBIR</span> sueldo
+  <span class="code-keyword">FIN_SI</span>
+<span class="code-keyword">FIN</span></div>
+      </div>
+      <div id="tab-ns12" class="tab-content">
+        <table class="ns-table">
+  <tr><td class="ns-header" colspan="2">Sueldo Avanzado</td></tr>
+  <tr><td colspan="2" style="background:var(--soft-purple);font-weight:700;">LEER horas, pagoHora</td></tr>
+  <tr><td class="ns-cond" colspan="2">¿horas &gt; 50?</td></tr>
+  <tr><td class="ns-true">ESCRIBIR "No permitido"</td>
+      <td class="ns-false">sueldo ← horas_normales × pH<br>SI &gt;40: +(h_doble×pH×2)<br>SI &gt;45: +(h_triple×pH×3)<br>ESCRIBIR sueldo</td></tr>
+</table>
+      </div>
+    </div>
+  </div>
+</div>
+<footer class="footer">
+  <div class="footer-blob"></div>
+  <div style="position:relative;z-index:1;">
+    <div class="footer-logo">TurtleLand</div>
+    <div class="footer-copy">Ejercicio 3.12 Problemas de Decisión </div>
+  </div>
+</footer>
+<script src="../js/decisiones.js"></script>
+</body>
+</html>
+

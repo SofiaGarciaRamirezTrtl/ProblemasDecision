@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3.11 Bono por Antigüedad</title>
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+<div class="bg-pattern"></div>
+<div class="floaties">
+  <div class="floaty" style="top:15%;left:4%;font-size:22px;animation-duration:8s;">📅</div>
+  <div class="floaty" style="top:60%;right:5%;font-size:16px;animation-duration:10s;animation-delay:-3s;">⭐</div>
+  <div class="floaty" style="top:35%;right:3%;font-size:20px;animation-duration:7s;animation-delay:-2s;">🌸</div>
+</div>
+<nav class="navbar">
+  <a href="../index.html" class="nav-logo"><div class="nav-logo-icon">🐢</div><span class="nav-logo-text">TurtleLand</span></a>
+  <button class="nav-hamburger" onclick="toggleNav()">☰</button>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="../index.html">Inicio</a></li>
+    <li><a href="ej01.html">3.1</a></li><li><a href="ej02.html">3.2</a></li>
+    <li><a href="ej03.html">3.3</a></li><li><a href="ej04.html">3.4</a></li>
+    <li><a href="ej05.html">3.5</a></li><li><a href="ej06.html">3.6</a></li>
+    <li><a href="ej07.html">3.7</a></li><li><a href="ej08.html">3.8</a></li>
+    <li><a href="ej09.html">3.9</a></li><li><a href="ej10.html">3.10</a></li>
+    <li><a href="ej11.html">3.11</a></li><li><a href="ej12.html">3.12</a></li>
+    <li><a href="ej13.html">3.13</a></li>
+  </ul>
+</nav>
+<div class="exercise-page">
+  <a href="../index.html" class="back-link">← Volver al inicio</a>
+  <div class="exercise-hero fade-in visible">
+    <div class="ex-number-badge">📅 Ejercicio 3.11</div>
+    <h1 class="ex-title">Bono por Antigüedad</h1>
+    <p class="ex-desc">Bono según años de servicio: 1 año → $100, 2 → $200, 3 → $300, 4 → $400, 5 → $500, más de 5 → $1,000.</p>
+  </div>
+  <div class="panel-container">
+    <div class="panel fade-in">
+      <div class="panel-title"><div class="panel-icon">✨</div>Formulario</div>
+      <div class="form-group"><label class="form-label">Años de antigüedad</label><input type="number" id="anios11" class="form-input" placeholder="Ej: 3" min="1" max="50"></div>
+      <button class="btn btn-primary" onclick="ejercicio11()" style="width:100%;">📅 Calcular bono</button>
+      <br><br>
+      <div id="result11" class="result-box">
+        <div class="result-text" style="opacity:0.5;font-size:16px;">Ingresa los datos para comenzar ✨</div>
+      </div>
+    </div>
+    <div class="panel fade-in">
+      <div class="panel-title"><div class="panel-icon">📝</div>Representaciones</div>
+      <div class="tabs">
+        <button class="tab-btn active" onclick="switchTab('pseudo11')">Pseudocódigo</button>
+        <button class="tab-btn" onclick="switchTab('ns11')">Diagrama N/S</button>
+      </div>
+      <div id="tab-pseudo11" class="tab-content active">
+        <div class="code-block"><span class="code-comment">// Ejercicio 3.11 — Bono Antigüedad</span>
+<span class="code-keyword">INICIO</span>
+  <span class="code-keyword">LEER</span> anios
+  <span class="code-keyword">SEGÚN</span> anios <span class="code-keyword">HACER</span>
+    <span class="code-value">1</span>: bono = <span class="code-value">100</span>
+    <span class="code-value">2</span>: bono = <span class="code-value">200</span>
+    <span class="code-value">3</span>: bono = <span class="code-value">300</span>
+    <span class="code-value">4</span>: bono = <span class="code-value">400</span>
+    <span class="code-value">5</span>: bono = <span class="code-value">500</span>
+    OTRO: bono = <span class="code-value">1000</span>
+  <span class="code-keyword">FIN_SEGÚN</span>
+  <span class="code-keyword">ESCRIBIR</span> bono
+<span class="code-keyword">FIN</span></div>
+      </div>
+      <div id="tab-ns11" class="tab-content">
+        <table class="ns-table">
+  <tr><td class="ns-header" colspan="3">Bono por Antigüedad</td></tr>
+  <tr><td colspan="3" style="background:var(--soft-purple);font-weight:700;">LEER anios</td></tr>
+  <tr><td class="ns-cond" colspan="3">años = 1 / 2 / 3 / 4 / 5 / &gt;5</td></tr>
+  <tr>
+    <td class="ns-true">$100</td><td class="ns-true">$200</td><td class="ns-false">...</td>
+  </tr>
+  <tr><td colspan="3" style="font-size:11px;padding:6px;text-align:center;font-family:Nunito,sans-serif;">años=3→$300 · años=4→$400 · años=5→$500 · &gt;5→$1,000</td></tr>
+  <tr><td colspan="3" class="ns-action">ESCRIBIR bono</td></tr>
+</table>
+      </div>
+    </div>
+  </div>
+</div>
+<footer class="footer">
+  <div class="footer-blob"></div>
+  <div style="position:relative;z-index:1;">
+    <div class="footer-logo">TurtleLand</div>
+    <div class="footer-copy">Ejercicio 3.11 Problemas de Decisión </div>
+  </div>
+</footer>
+<script src="../js/decisiones.js"></script>
+</body>
+</html>
+

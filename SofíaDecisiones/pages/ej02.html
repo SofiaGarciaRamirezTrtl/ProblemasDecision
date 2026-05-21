@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3.2 Sueldo Semanal</title>
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+<div class="bg-pattern"></div>
+<div class="floaties">
+  <div class="floaty" style="top:15%;left:4%;font-size:22px;animation-duration:8s;">💼</div>
+  <div class="floaty" style="top:55%;right:5%;font-size:18px;animation-duration:9s;animation-delay:-2s;">💰</div>
+  <div class="floaty" style="top:30%;right:3%;font-size:16px;animation-duration:11s;animation-delay:-4s;">⭐</div>
+</div>
+
+<nav class="navbar">
+  <a href="../index.html" class="nav-logo">
+    <div class="nav-logo-icon">🐢</div>
+    <span class="nav-logo-text">TurtleLand</span>
+  </a>
+  <button class="nav-hamburger" onclick="toggleNav()">☰</button>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="../index.html">Inicio</a></li>
+    <li><a href="ej01.html">3.1</a></li><li><a href="ej02.html" class="active">3.2</a></li>
+    <li><a href="ej03.html">3.3</a></li><li><a href="ej04.html">3.4</a></li>
+    <li><a href="ej05.html">3.5</a></li><li><a href="ej06.html">3.6</a></li>
+    <li><a href="ej07.html">3.7</a></li><li><a href="ej08.html">3.8</a></li>
+    <li><a href="ej09.html">3.9</a></li><li><a href="ej10.html">3.10</a></li>
+    <li><a href="ej11.html">3.11</a></li><li><a href="ej12.html">3.12</a></li>
+    <li><a href="ej13.html">3.13</a></li>
+  </ul>
+</nav>
+
+<div class="exercise-page">
+  <a href="../index.html" class="back-link">← Volver al inicio</a>
+  <div class="exercise-hero fade-in visible">
+    <div class="ex-number-badge">💼 Ejercicio 3.2</div>
+    <h1 class="ex-title">Sueldo Semanal</h1>
+    <p class="ex-desc">Calcula el sueldo semanal de un trabajador. Hasta 40 horas se paga la tarifa normal. Después de la hora 40, cada hora extra se paga al doble.</p>
+  </div>
+
+  <div class="panel-container">
+    <div class="panel fade-in">
+      <div class="panel-title"><div class="panel-icon">✨</div>Formulario</div>
+      <div class="form-group">
+        <label class="form-label">Horas trabajadas en la semana</label>
+        <input type="number" id="horas02" class="form-input" placeholder="Ej: 45" min="0" max="168">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Pago por hora ($)</label>
+        <input type="number" id="pago02" class="form-input" placeholder="Ej: 50.00" min="0" step="0.01">
+      </div>
+      <button class="btn btn-primary" onclick="ejercicio02()" style="width:100%;">💰 Calcular sueldo</button>
+      <br><br>
+      <div id="result02" class="result-box">
+        <div class="result-text" style="opacity:0.5;font-size:16px;">Ingresa los datos para calcular</div>
+      </div>
+    </div>
+
+    <div class="panel fade-in">
+      <div class="panel-title"><div class="panel-icon">📝</div>Representaciones</div>
+      <div class="tabs">
+        <button class="tab-btn active" onclick="switchTab('pseudo02')">Pseudocódigo</button>
+        <button class="tab-btn" onclick="switchTab('ns02')">Diagrama N/S</button>
+        <button class="tab-btn" onclick="switchTab('flow02')">Flujo</button>
+      </div>
+
+      <div id="tab-pseudo02" class="tab-content active">
+        <div class="code-block">
+<span class="code-comment">// Ejercicio 3.2 — Sueldo Semanal</span>
+<span class="code-keyword">INICIO</span>
+  <span class="code-keyword">LEER</span> horas, pagoHora
+  <span class="code-keyword">SI</span> horas <= <span class="code-value">40</span> <span class="code-keyword">ENTONCES</span>
+    sueldo ← horas * pagoHora
+  <span class="code-keyword">SINO</span>
+    sueldo ← (<span class="code-value">40</span> * pagoHora)
+           + ((horas - <span class="code-value">40</span>) * pagoHora * <span class="code-value">2</span>)
+  <span class="code-keyword">FIN_SI</span>
+  <span class="code-keyword">ESCRIBIR</span> sueldo
+<span class="code-keyword">FIN</span>
+        </div>
+      </div>
+
+      <div id="tab-ns02" class="tab-content">
+        <table class="ns-table">
+          <tr><td class="ns-header" colspan="2">Sueldo Semanal</td></tr>
+          <tr><td colspan="2" style="background:var(--soft-purple);font-weight:700;">LEER horas, pagoHora</td></tr>
+          <tr><td class="ns-cond" colspan="2">¿horas ≤ 40?</td></tr>
+          <tr>
+            <td class="ns-true"><b>SÍ</b><br>sueldo ←<br>horas × pagoHora</td>
+            <td class="ns-false"><b>NO</b><br>sueldo ← (40 × pagoHora)<br>+ ((horas−40) × pagoHora × 2)</td>
+          </tr>
+          <tr><td colspan="2" class="ns-action">ESCRIBIR sueldo</td></tr>
+        </table>
+      </div>
+
+      <div id="tab-flow02" class="tab-content">
+        <div class="flowchart-container">
+          <svg class="flowchart-svg" viewBox="0 0 300 460" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <marker id="arr2" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+                <path d="M0,0 L0,6 L8,3 z" fill="#9B72CF"/>
+              </marker>
+            </defs>
+            <ellipse cx="150" cy="36" rx="55" ry="22" fill="#FF6EB4" stroke="#C44D9E" stroke-width="2"/>
+            <text x="150" y="41" text-anchor="middle" fill="white" font-family="Fredoka One,cursive" font-size="14">INICIO</text>
+            <line x1="150" y1="58" x2="150" y2="88" stroke="#9B72CF" stroke-width="2" marker-end="url(#arr2)"/>
+            <rect x="65" y="88" width="170" height="44" rx="8" fill="#EDE0FF" stroke="#C9B8FF" stroke-width="2"/>
+            <text x="150" y="107" text-anchor="middle" fill="#3D1A6B" font-family="Nunito,sans-serif" font-weight="700" font-size="12">LEER horas,</text>
+            <text x="150" y="121" text-anchor="middle" fill="#3D1A6B" font-family="Nunito,sans-serif" font-weight="700" font-size="12">pagoHora</text>
+            <line x1="150" y1="132" x2="150" y2="162" stroke="#9B72CF" stroke-width="2" marker-end="url(#arr2)"/>
+            <polygon points="150,162 250,205 150,248 50,205" fill="#FFF0F8" stroke="#FF6EB4" stroke-width="2"/>
+            <text x="150" y="201" text-anchor="middle" fill="#3D1A6B" font-family="Nunito,sans-serif" font-weight="700" font-size="12">horas ≤ 40</text>
+            <text x="150" y="215" text-anchor="middle" fill="#9B72CF" font-family="Nunito,sans-serif" font-size="11">¿?</text>
+            <text x="60" y="222" text-anchor="middle" fill="#E91E8C" font-family="Nunito,sans-serif" font-size="11" font-weight="700">SÍ</text>
+            <line x1="50" y1="205" x2="50" y2="270" stroke="#9B72CF" stroke-width="2" marker-end="url(#arr2)"/>
+            <rect x="5" y="270" width="93" height="50" rx="8" fill="#FFB6D9" stroke="#FF6EB4" stroke-width="2"/>
+            <text x="51" y="290" text-anchor="middle" fill="#3D1A6B" font-family="Nunito,sans-serif" font-weight="700" font-size="10">sueldo ←</text>
+            <text x="51" y="304" text-anchor="middle" fill="#6B3FA0" font-family="Nunito,sans-serif" font-size="10">horas×pagoHora</text>
+            <text x="240" y="222" text-anchor="middle" fill="#9B72CF" font-family="Nunito,sans-serif" font-size="11" font-weight="700">NO</text>
+            <line x1="250" y1="205" x2="250" y2="270" stroke="#9B72CF" stroke-width="2" marker-end="url(#arr2)"/>
+            <rect x="200" y="270" width="97" height="50" rx="8" fill="#C9B8FF" stroke="#9B72CF" stroke-width="2"/>
+            <text x="248" y="287" text-anchor="middle" fill="#3D1A6B" font-family="Nunito,sans-serif" font-weight="700" font-size="9">sueldo ← (40×pH)</text>
+            <text x="248" y="300" text-anchor="middle" fill="#6B3FA0" font-family="Nunito,sans-serif" font-size="9">+((h-40)×pH×2)</text>
+            <line x1="51" y1="320" x2="51" y2="365" stroke="#9B72CF" stroke-width="2"/>
+            <line x1="51" y1="365" x2="142" y2="365" stroke="#9B72CF" stroke-width="2" marker-end="url(#arr2)"/>
+            <line x1="248" y1="320" x2="248" y2="365" stroke="#9B72CF" stroke-width="2"/>
+            <line x1="248" y1="365" x2="158" y2="365" stroke="#9B72CF" stroke-width="2"/>
+            <rect x="75" y="365" width="150" height="40" rx="8" fill="#EDE0FF" stroke="#C9B8FF" stroke-width="2"/>
+            <text x="150" y="390" text-anchor="middle" fill="#3D1A6B" font-family="Nunito,sans-serif" font-weight="700" font-size="12">ESCRIBIR sueldo</text>
+            <line x1="150" y1="405" x2="150" y2="425" stroke="#9B72CF" stroke-width="2" marker-end="url(#arr2)"/>
+            <ellipse cx="150" cy="440" rx="55" ry="18" fill="#FF6EB4" stroke="#C44D9E" stroke-width="2"/>
+            <text x="150" y="445" text-anchor="middle" fill="white" font-family="Fredoka One,cursive" font-size="14">FIN</text>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="footer-blob"></div>
+  <div style="position:relative;z-index:1;">
+    <div class="footer-logo">TurtleLand</div>
+    <div class="footer-copy">Ejercicio 3.2  Problemas de Decisión</div>
+  </div>
+</footer>
+<script src="../js/decisiones.js"></script>
+</body>
+</html>
